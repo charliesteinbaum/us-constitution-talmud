@@ -1,0 +1,1488 @@
+<!doctype html><html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Constitution of the United States: A Commentary in the Talmudic Tradition</title>
+<style>
+:root {
+  --bg:         #141210;
+  --bg-center:  #181510;
+  --ink:        #E4D8BC;
+  --ink-2:      #B8A880;
+  --ink-3:      #706050;
+  --rule:       #302820;
+  --rule-light: #252015;
+
+  --orig:     #2A5FA8;
+  --orig-bg:  #0C1A2E;
+  --text-p:   #C03030;
+  --text-bg:  #2E0C0C;
+  --live:     #268A52;
+  --live-bg:  #0C2818;
+  --prag:     #C4960C;
+  --prag-bg:  #281E00;
+  --nat:      #8855CC;
+  --nat-bg:   #1A0C2E;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:focus-visible { outline: 2px solid var(--orig); outline-offset: 2px; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 15px;
+}
+
+/* ── MASTHEAD ─────────────────────────────────────────────────────── */
+#masthead {
+  background: #000;
+  border-bottom: 1px solid var(--rule);
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+.masthead-inner {
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.masthead-title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  padding: 11px 0 7px;
+  border-bottom: 1px solid #1a1408;
+}
+.masthead-title {
+  font-family: "Palatino Linotype", Palatino, "Book Antiqua", serif;
+  font-size: 1rem;
+  font-weight: normal;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #e4d8bc;
+  flex: 1;
+}
+.masthead-subtitle {
+  font-size: 1em;
+  color: #e4d8bc;
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: 0.06em;
+}
+
+/* ── COLLAPSE ─────────────────────────────────────────────────────── */
+.collapse-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #504030;
+  padding: 0 10px 0 0;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  width: 21px;
+  line-height: 1;
+  transition: color 0.15s;
+}
+.collapse-btn:hover { color: #c8bca0; }
+.collapse-btn svg { transition: transform 0.25s ease; display: block; }
+.collapse-btn.rotated svg { transform: rotate(-90deg); }
+
+.section-body {
+  overflow: hidden;
+  max-height: 80000px;
+  transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.section-body.collapsed {
+  max-height: 0;
+  transition: max-height 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── ABOUT SECTION ────────────────────────────────────────────────── */
+.about-heading {
+  font-family: "Palatino Linotype", Palatino, "Book Antiqua", serif;
+  font-size: 1.35rem;
+  font-weight: normal;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  text-wrap: balance;
+  line-height: 1.28;
+  margin-bottom: 14px;
+}
+.about-rule { width: 36px; height: 1px; background: var(--rule); margin: 0 0 18px; }
+.about-body {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.86rem;
+  line-height: 1.82;
+  color: var(--ink-2);
+  margin-bottom: 14px;
+}
+.about-schools-head {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin: 22px 0 12px;
+  padding-top: 18px;
+  border-top: 1px solid var(--rule-light);
+}
+.about-phil-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+.about-phil-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+  font-size: 0.79rem;
+  line-height: 1.62;
+  color: var(--ink-2);
+}
+.about-phil-list strong { color: var(--ink); font-weight: normal; }
+.about-dot {
+  width: 7px; height: 7px;
+  border-radius: 1px;
+  flex-shrink: 0;
+  position: relative;
+  top: 1px;
+  display: inline-block;
+}
+
+/* ── LEGEND ──────────────────────────────────────────────────────── */
+.legend-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 5px 0 4px;
+  gap: 0;
+  border-bottom: 1px solid #1a1408;
+}
+.legend-head {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.57rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #504030;
+  margin-right: 14px;
+  padding-right: 14px;
+  border-right: 1px solid #302018;
+}
+.phil-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 12px 3px 8px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: "Palatino Linotype", Palatino, "Book Antiqua", serif;
+  font-size: 0.72rem;
+  color: #504030;
+  border-right: 1px solid #1e1610;
+  transition: color 0.15s;
+  user-select: none;
+  white-space: nowrap;
+}
+.phil-toggle:last-child { border-right: none; }
+.phil-toggle.active { color: var(--ink); }
+.phil-swatch {
+  width: 8px; height: 8px;
+  border-radius: 2px;
+  flex-shrink: 0;
+  opacity: 0.3;
+  transition: opacity 0.15s;
+}
+.phil-toggle.active .phil-swatch { opacity: 1; }
+
+/* ── SECTION NAV ─────────────────────────────────────────────────── */
+.section-nav-row {
+  display: flex;
+  gap: 0;
+  padding: 4px 0 3px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.section-nav-row::-webkit-scrollbar { display: none; }
+.section-nav-row a {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.57rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #504030;
+  text-decoration: none;
+  padding: 2px 10px 2px 0;
+  margin-right: 10px;
+  border-right: 1px solid #1e1610;
+  white-space: nowrap;
+  transition: color 0.12s;
+  flex-shrink: 0;
+}
+.section-nav-row a:last-child { border-right: none; }
+.section-nav-row a:hover, .section-nav-row a.active { color: var(--ink); }
+
+/* ── INTRO ───────────────────────────────────────────────────────── */
+.intro {
+  max-width: 1480px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 560px 1fr;
+}
+.intro-center {
+  padding: 28px 32px 24px;
+  background: var(--bg-center);
+  border-left: 1px solid var(--rule);
+  border-right: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  text-align: center;
+}
+.intro-heading {
+  font-family: "Palatino Linotype", Palatino, "Book Antiqua", serif;
+  font-size: 1.8rem;
+  font-weight: normal;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  text-wrap: balance;
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+.intro-rule { width: 50px; height: 1px; background: var(--rule); margin: 10px auto 12px; }
+.intro-body { font-size: 0.8rem; color: var(--ink-2); line-height: 1.75; max-width: 400px; margin: 0 auto; }
+.intro-empty { background: var(--bg); }
+
+/* ── DIVIDERS ────────────────────────────────────────────────────── */
+.page-wrap { max-width: 1480px; margin: 0 auto; }
+.article-divider {
+  display: block;
+}
+.divider-label {
+  grid-column: 1 / -1;
+  background: #000;
+  color: #c8bca0;
+  padding: 6px 20px;
+  font-family: "Palatino Linotype", Palatino, "Book Antiqua", serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-top: 1px solid #1a1408;
+  border-bottom: 1px solid #1a1408;
+}
+.divider-number {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.58rem;
+  opacity: 0.4;
+  letter-spacing: 0.05em;
+  min-width: 52px;
+  flex-shrink: 0;
+}
+/* Non-collapsible category headers: title flush left, no section number */
+.no-collapse .divider-number { display: none; }
+.no-collapse .divider-label { font-size: 0.62rem; letter-spacing: 0.25em; opacity: 0.6; }
+
+/* ── GRID ROWS ───────────────────────────────────────────────────── */
+.const-row {
+  display: grid;
+  grid-template-columns: 1fr 560px 1fr;
+  align-items: start;
+  border-bottom: 1px solid var(--rule-light);
+}
+.margin-l, .margin-r {
+  padding: 18px 14px 18px 20px;
+  background: var(--bg);
+}
+.margin-r {
+  padding: 18px 20px 18px 14px;
+  border-left: 1px solid var(--rule);
+}
+.margin-l { border-right: 1px solid var(--rule); }
+
+.center-col {
+  background: var(--bg-center);
+  padding: 22px 28px;
+  border-left: 1px solid var(--rule);
+  border-right: 1px solid var(--rule);
+}
+.section-label {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 12px;
+  display: block;
+}
+.const-text {
+  font-family: "Palatino Linotype", Palatino, "Book Antiqua", serif;
+  font-size: 0.95rem;
+  line-height: 1.82;
+  color: var(--ink);
+}
+.const-text p + p { margin-top: 12px; }
+.superseded { font-style: italic; opacity: 0.55; }
+
+/* ── COMMENT CARDS ───────────────────────────────────────────────── */
+.comment {
+  margin-bottom: 10px;
+  padding: 9px 11px 9px 11px;
+  border-left: 3px solid;
+  font-size: 0.71rem;
+  line-height: 1.62;
+  transition: opacity 0.2s;
+}
+.comment:last-child { margin-bottom: 0; }
+.comment[data-phil="originalism"]  { border-color: var(--orig);  background: var(--orig-bg); }
+.comment[data-phil="textualism"]   { border-color: var(--text-p); background: var(--text-bg); }
+.comment[data-phil="living"]       { border-color: var(--live);  background: var(--live-bg); }
+.comment[data-phil="pragmatism"]   { border-color: var(--prag);  background: var(--prag-bg); }
+.comment[data-phil="natural-law"]  { border-color: var(--nat);   background: var(--nat-bg); }
+.comment.hidden { display: none; }
+
+.comment-tag {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.56rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.comment[data-phil="originalism"]  .comment-tag { color: var(--orig); }
+.comment[data-phil="textualism"]   .comment-tag { color: var(--text-p); }
+.comment[data-phil="living"]       .comment-tag { color: var(--live); }
+.comment[data-phil="pragmatism"]   .comment-tag { color: var(--prag); }
+.comment[data-phil="natural-law"]  .comment-tag { color: var(--nat); }
+
+.comment-body { color: var(--ink); font-size: 0.71rem; }
+.comment-body em { font-style: italic; color: var(--ink-2); }
+
+.comment-cases { margin-top: 7px; display: flex; flex-wrap: wrap; gap: 4px; }
+.case-ref {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.57rem;
+  padding: 2px 7px;
+  border-radius: 2px;
+  white-space: nowrap;
+  color: #fff;
+  font-style: italic;
+}
+.comment[data-phil="originalism"]  .case-ref { background: var(--orig); }
+.comment[data-phil="textualism"]   .case-ref { background: var(--text-p); }
+.comment[data-phil="living"]       .case-ref { background: var(--live); }
+.comment[data-phil="pragmatism"]   .case-ref { background: var(--prag); }
+.comment[data-phil="natural-law"]  .case-ref { background: var(--nat); }
+
+/* scroll-margin accounts for sticky header */
+.article-divider[id] { scroll-margin-top: var(--header-h, 110px); }
+
+@media (max-width: 880px) {
+  .const-row, .intro { grid-template-columns: 1fr; }
+  /* constitutional text first on mobile */
+  .center-col { order: 1; border: none; padding: 14px 16px; }
+  .margin-l   { order: 2; border: none; border-top: 1px solid var(--rule-light); padding: 12px 16px; }
+  .margin-r   { order: 3; border: none; border-top: 1px solid var(--rule-light); padding: 12px 16px; }
+  .intro-empty { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .comment, .phil-toggle, .phil-swatch { transition: none; } }
+</style>
+</head>
+<body>
+
+<header id="masthead">
+  <div class="masthead-inner">
+    <div class="masthead-title-row">
+      <div class="masthead-title">The Constitution of the United States: <span class="masthead-subtitle">A Commentary in the Talmudic Tradition</span></div>
+    </div>
+    <div class="legend-row">
+      <button class="phil-toggle active" data-phil="originalism"><span class="phil-swatch" style="background:var(--orig)"></span>Originalism</button>
+      <button class="phil-toggle active" data-phil="textualism"><span class="phil-swatch" style="background:var(--text-p)"></span>Textualism</button>
+      <button class="phil-toggle active" data-phil="living"><span class="phil-swatch" style="background:var(--live)"></span>Living Constitution</button>
+      <button class="phil-toggle active" data-phil="pragmatism"><span class="phil-swatch" style="background:var(--prag)"></span>Pragmatism</button>
+      <button class="phil-toggle active" data-phil="natural-law"><span class="phil-swatch" style="background:var(--nat)"></span>Natural Law</button>
+    </div>
+    <nav class="section-nav-row">
+      <a href="#preamble">Preamble</a>
+      <a href="#art1">Art. I</a>
+      <a href="#art2">Art. II</a>
+      <a href="#art3">Art. III</a>
+      <a href="#art4">Art. IV</a>
+      <a href="#art5">Art. V</a>
+      <a href="#art6">Art. VI</a>
+      <a href="#am1">Am. I</a>
+      <a href="#am2">Am. II</a>
+      <a href="#am4">Am. IV</a>
+      <a href="#am5">Am. V</a>
+      <a href="#am8">Am. VIII</a>
+      <a href="#am9">Am. IX</a>
+      <a href="#am10">Am. X</a>
+      <a href="#am13">Am. XIII</a>
+      <a href="#am14">Am. XIV</a>
+      <a href="#am15">Am. XV</a>
+      <a href="#am17">Am. XVII</a>
+      <a href="#am19">Am. XIX</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-wrap">
+
+<!-- ═══ ABOUT ════════════════════════════════════════════════════ -->
+<div class="article-divider" id="about"><div class="divider-label"><span class="divider-number">§ —</span>About This Project</div></div>
+
+<div class="const-row">
+  <div class="margin-l">
+    <div class="comment" data-phil="originalism">
+      <div class="comment-tag">Originalism</div>
+      <div class="comment-body">Interpretation that departs from the text's original public meaning substitutes judicial preference for democratic will. The commentary on these pages reflects what each school of thought would actually argue — not a caricature, but the strongest version of each position, grounded in real case law and historical reasoning.</div>
+    </div>
+    <div class="comment" data-phil="living">
+      <div class="comment-tag">Living Constitution</div>
+      <div class="comment-body">The Constitution is not a legal fossil. It is a framework designed to govern an evolving nation. Commentary in this tradition reads each clause in light of its underlying purpose and asks how that purpose is best served in contemporary circumstances — not what a delegate in Philadelphia would have imagined.</div>
+    </div>
+  </div>
+  <div class="center-col">
+    <h2 class="about-heading">The Constitution &amp; Its Commentators</h2>
+    <div class="about-rule"></div>
+    <p class="about-body">In the Talmudic tradition, the sacred text stands at the center of the page — the Torah, the Mishnah — and the margins fill with centuries of rabbinical debate. Rashi occupies one side; the Tosafot, the other. Each brings a distinct interpretive lens to the same words. Agreement and disagreement accumulate in parallel, without erasing either.</p>
+    <p class="about-body">This project applies that architecture to the Constitution of the United States. The verbatim text holds the center column. Five traditions of American judicial philosophy occupy the margins, each annotating the passages where their commitments lead to meaningfully different results. Commentary concentrates on genuinely contested clauses and is absent where the text is procedural or the interpretive consensus is settled.</p>
+    <p class="about-body">On the sides — or below, on mobile — you'll find a description of each of the five schools of thought represented here. Use the toggles in the header to show or hide any school throughout the document. Each section collapses with the arrow on its left. Case citations appear where a specific decision illustrates the argument.</p>
+  </div>
+  <div class="margin-r">
+    <div class="comment" data-phil="textualism">
+      <div class="comment-tag">Textualism</div>
+      <div class="comment-body">The text is the law. Legislative history, evolving social norms, and judicial intuition about good outcomes are not. What the words meant to a competent reader at ratification — their ordinary public meaning — is the only anchor available that does not reduce law to the preferences of whoever happens to be interpreting it.</div>
+    </div>
+    <div class="comment" data-phil="pragmatism">
+      <div class="comment-tag">Pragmatism</div>
+      <div class="comment-body">Law must work. A constitution that cannot adapt to governing a continental nation in the 21st century will be circumvented or ignored. The pragmatist tradition asks not only what the text requires but what interpretation best serves the democratic and functional purposes the Constitution was designed to advance — and what the actual consequences of competing readings will be.</div>
+    </div>
+    <div class="comment" data-phil="natural-law">
+      <div class="comment-tag">Natural Law</div>
+      <div class="comment-body">The Constitution does not create rights — it recognizes them. The Founders understood themselves to be codifying pre-political truths about human dignity and natural liberty. Where the text is silent or ambiguous, the natural-law tradition looks to those underlying commitments, asking not only what the document says but what justice requires of any legitimate government.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ THE CONSTITUTION HEADER (non-collapsible) ══════════════════ -->
+<div class="article-divider no-collapse"><div class="divider-label"><span class="divider-number">§ I–VII</span>The Constitution · 1787</div></div>
+
+<!-- ═══ PREAMBLE ══════════════════════════════════════════════════ -->
+<div class="article-divider" id="preamble"><div class="divider-label"><span class="divider-number">§ 0</span>Preamble</div></div>
+
+<div class="const-row">
+  <div class="margin-l">
+    <div class="comment" data-phil="originalism">
+      <div class="comment-tag">Originalism</div>
+      <div class="comment-body">"We the People" denoted the citizens of the ratifying states as of 1787. The Preamble confers no independent legal power — it states purpose only. Where later generations sought to alter the constitutional community, they did so by the only legitimate means: formal amendment. Purpose-language cannot expand authority beyond enumerated grants.</div>
+    </div>
+    <div class="comment" data-phil="textualism">
+      <div class="comment-tag">Textualism</div>
+      <div class="comment-body">The Preamble is precisely what its grammar declares: a purpose clause, not a grant of authority. "The general Welfare" names a goal, not a power. Courts have consistently refused to derive enforceable rights from preamble language alone.</div>
+      <div class="comment-cases"><span class="case-ref">Jacobson v. Massachusetts (1905)</span></div>
+    </div>
+  </div>
+  <div class="center-col">
+    <span class="section-label">Preamble · 1787</span>
+    <div class="const-text"><p>We the People of the United States, in Order to form a more perfect Union, establish Justice, insure domestic Tranquility, provide for the common defence, promote the general Welfare, and secure the Blessings of Liberty to ourselves and our Posterity, do ordain and establish this Constitution for the United States of America.</p></div>
+  </div>
+  <div class="margin-r">
+    <div class="comment" data-phil="living">
+      <div class="comment-tag">Living Constitution</div>
+      <div class="comment-body">"We the People" is the document's most transformative phrase — not because its meaning was fixed in 1787, but because it demonstrably was not. The original Constitution excluded enslaved persons, women, and those without property. The arc of constitutional history is the progressive enlargement of who counts as "the People," achieved through amendment and reinterpretation alike.</div>
+    </div>
+    <div class="comment" data-phil="natural-law">
+      <div class="comment-tag">Natural Law</div>
+      <div class="comment-body">The Founders consciously grounded this Preamble in the natural-law tradition of the Declaration of Independence: governments derive just powers from consent of the governed to protect pre-political natural rights. The Constitution's legitimacy depends on its fidelity to those prior rights — not merely to its own text.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ ARTICLE I ════════════════════════════════════════════════ -->
+<div class="article-divider" id="art1"><div class="divider-label"><span class="divider-number">§ I</span>Article I — The Legislative Branch</div></div>
+
+<!-- §1 Vesting -->
+<div class="const-row">
+  <div class="margin-l">
+    <div class="comment" data-phil="originalism">
+      <div class="comment-tag">Originalism</div>
+      <div class="comment-body">Vesting "all legislative Powers" in Congress enacted the non-delegation doctrine: Congress cannot transfer its core lawmaking function to executive agencies. The original understanding required Congress to make the actual policy choices — not to hand a blank check to administrators. The major questions doctrine in <em>West Virginia v. EPA</em> (2022) represents a belated attempt to restore this limit.</div>
+      <div class="comment-cases"><span class="case-ref">West Virginia v. EPA (2022)</span><span class="case-ref">Schechter Poultry (1935)</span></div>
+    </div>
+  </div>
+  <div class="center-col">
+    <span class="section-label">Article I, Section 1</span>
+    <div class="const-text"><p>All legislative Powers herein granted shall be vested in a Congress of the United States, which shall consist of a Senate and House of Representatives.</p></div>
+  </div>
+  <div class="margin-r">
+    <div class="comment" data-phil="pragmatism">
+      <div class="comment-tag">Pragmatism</div>
+      <div class="comment-body">The modern administrative state is a functional necessity for governing a continental nation. Congress retains democratic accountability through appropriations and oversight. Courts applying a strict non-delegation or major-questions doctrine risk substituting judicial preference for expert regulation — undermining the institutional allocation of competence the Constitution's structure actually requires.</div>
+      <div class="comment-cases"><span class="case-ref">Mistretta v. United States (1989)</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- §2 House -->
+<div class="const-row">
+  <div class="margin-l">
+    <div class="comment" data-phil="living">
+      <div class="comment-tag">Living Constitution</div>
+      <div class="comment-body">The Three-Fifths Clause — counting enslaved persons as three-fifths of a free person for apportionment — is the Constitution's original sin made visible in the text. It was not a compromise of principle but of humanity. Its formal supersession by the Fourteenth Amendment confirms that the Constitution was always a contested, unfinished moral project, not a completed document delivering fixed truth.</div>
+    </div>
+  </div>
+  <div class="center-col">
+    <span class="section-label">Article I, Section 2</span>
+    <div class="const-text">
+      <p>The House of Representatives shall be composed of Members chosen every second Year by the People of the several States, and the Electors in each State shall have the Qualifications requisite for Electors of the most numerous Branch of the State Legislature.</p>
+      <p>No Person shall be a Representative who shall not have attained to the Age of twenty five Years, and been seven Years a Citizen of the United States, and who shall not, when elected, be an Inhabitant of that State in which he shall be chosen.</p>
+      <p><span class="superseded">[Representatives and direct Taxes shall be apportioned among the several States which may be included within this Union, according to their respective Numbers, which shall be determined by adding to the whole Number of free Persons, including those bound to Service for a Term of Years, and excluding Indians not taxed, three fifths of all other Persons.]</span> The actual Enumeration shall be made within three Years after the first Meeting of the Congress of the United States, and within every subsequent Term of ten Years, in such Manner as they shall by Law direct.</p>
+      <p>The House of Representatives shall chuse their Speaker and other Officers; and shall have the sole Power of Impeachment.</p>
+    </div>
+  </div>
+  <div class="margin-r">
+    <div class="comment" data-phil="originalism">
+      <div class="comment-tag">Originalism</div>
+      <div class="comment-body">The Three-Fifths Clause was a political compromise, not a moral endorsement of slavery. It was explicitly superseded by the Fourteenth Amendment — demonstrating that the amendment process, not judicial reinterpretation, is the legitimate mechanism for constitutional change. The clause's inclusion and eventual removal both occurred through the text, as the Founders intended.</div>
+    </div>
+  </div>
+</div>
+
+<!-- §3 Senate -->
+<div class="const-row">
+  <div class="margin-l">
+    <div class="comment" data-phil="textualism">
+      <div class="comment-tag">Textualism</div>
+      <div class="comment-body">The Senate's sole power to try impeachments is textually explicit and judicially unreviewable. In <em>Nixon v. United States</em> (1993), the Court correctly held that the Senate's impeachment procedures present a political question — "try" grants the Senate complete procedural discretion. The text says "sole Power"; that means courts have none.</div>
+      <div class="comment-cases"><span class="case-ref">Nixon v. United States (1993)</span></div>
+    </div>
+  </div>
+  <div class="center-col">
+    <span class="section-label">Article I, Section 3</span>
+    <div class="const-text">
+      <p>The Senate of the United States shall be composed of two Senators from each State, <span class="superseded">[chosen by the Legislature thereof,]</span> for six Years; and each Senator shall have one Vote.</p>
+      <p>The Vice President of the United States shall be President of the Senate, but shall have no Vote, unless they be equally divided.</p>
+      <p>The Senate shall have the sole Power to try all Impeachments. When sitting for that Purpose, they shall be on Oath or Affirmation. When the President of the United States is tried, the Chief Justice shall preside: And no Person shall be convicted without the Concurrence of two thirds of the Members present.</p>
+      <p>Judgment in Cases of Impeachment shall not extend further than to removal from Office, and disqualification to hold and enjoy any Office of honor, Trust or Profit under the United States: but the Party convicted shall nevertheless be liable and subject to Indictment, Trial, Judgment and Punishment, according to Law.</p>
+    </div>
+  </div>
+  <div class="margin-r">
+    <div class="comment" data-phil="pragmatism">
+      <div class="comment-tag">Pragmatism</div>
+      <div class="comment-body">"High crimes and misdemeanors" derives from English parliamentary practice meaning abuse of public trust — not necessarily criminal conduct. The framers chose that phrase precisely because they understood impeachment as a political remedy for official misconduct, not a criminal proceeding. Functional fidelity to that purpose matters more than any strict textual parsing of what constitutes a "crime."</div>
+    </div>
+  </div>
+</div>
+
+<!-- §§ 4-6 Procedure -->
+<div class="const-row">
+  <div class="margin-l"></div>
+  <div class="center-col">
+    <span class="section-label">Article I, Sections 4–6</span>
+    <div class="const-text">
+      <p>The Times, Places and Manner of holding Elections for Senators and Representatives, shall be prescribed in each State by the Legislature thereof; but the Congress may at any time by Law make or alter such Regulations, except as to the Places of chusing Senators.</p>
+      <p>Each House shall be the Judge of the Elections, Returns and Qualifications of its own Members, and a Majority of each shall constitute a Quorum to do Business…</p>
+      <p>Each House may determine the Rules of its Proceedings, punish its Members for disorderly Behaviour, and, with the Concurrence of two thirds, expel a Member.</p>
+      <p>The Senators and Representatives shall receive a Compensation for their Services, to be ascertained by Law, and paid out of the Treasury of the United States. They shall in all Cases, except Treason, Felony and Breach of the Peace, be privileged from Arrest during their Attendance at the Session of their respective Houses…and for any Speech or Debate in either House, they shall not be questioned in any other Place.</p>
+    </div>
+  </div>
+  <div class="margin-r"></div>
+</div>
+
+<!-- §7 Presentment -->
+<div class="const-row">
+  <div class="margin-l">
+    <div class="comment" data-phil="textualism">
+      <div class="comment-tag">Textualism</div>
+      <div class="comment-body">The Presentment Clause's requirements are formal and absolute: every bill must pass both chambers and be presented to the President. Congress cannot bypass this by reserving a "legislative veto" over executive action — that device allows one or both chambers to nullify executive decisions without bicameralism or presentment. Justice Burger's opinion in <em>INS v. Chadha</em> correctly struck it down as constitutionally impermissible, regardless of its practical convenience.</div>
+      <div class="comment-cases"><span class="case-ref">INS v. Chadha (1983)</span></div>
+    </div>
+  </div>
+  <div class="center-col">
+    <span class="section-label">Article I, Section 7</span>
+    <div class="const-text">
+      <p>All Bills for raising Revenue shall originate in the House of Representatives; but the Senate may propose or concur with Amendments as on other Bills.</p>
+      <p>Every Bill which shall have passed the House of Representatives and the Senate, shall, before it become a Law, be presented to the President of the United States; If he approve he shall sign it, but if not he shall return it, with his Objections…If after such Reconsideration two thirds of that House shall agree to pass the Bill, it shall be sent, together with the Objections, to the other House, by which it shall likewise be reconsidered, and if approved by two thirds of that House, it shall become a Law.</p>
+      <p>Every Order, Resolution, or Vote to which the Concurrence of the Senate and House of Representatives may be necessary (except on a question of Adjournment) shall be presented to the President of the United States; and before the Same shall take Effect, shall be approved by him, or being disapproved by him, shall be repassed by two thirds of the Senate and House of Representatives…</p>
+    </div>
+  </div>
+  <div class="margin-r">
+    <div class="comment" data-phil="pragmatism">
+      <div class="comment-tag">Pragmatism</div>
+      <div class="comment-body">The formal rigidity of bicameralism and presentment was designed for a simpler era. The practical consequence of strict application — invalidating hundreds of legislative veto provisions embedded in existing statutes — created enormous disruption without a corresponding constitutional benefit. Justice White's <em>Chadha</em> dissent correctly argued that the legislative veto was a pragmatic accommodation that preserved democratic oversight of delegated power.</div>
+    </div>
+  </div>
+</div>
+
+<!-- §8 Powers -->
+<div class="article-divider sub-divider" id="art1s8"><div class="divider-label"><span class="divider-number">§ I.8</span>Article I, §8 — Enumerated Powers of Congress</div></div>
+
+<!-- §8 Taxing/Spending -->
+<div class="const-row">
+  <div class="margin-l">
+    <div class="comment" data-phil="originalism">
+      <div class="comment-tag">Originalism</div>
+      <div class="comment-body">The Taxing Clause grants power to lay and collect taxes for "the general Welfare" — but this phrase does not authorize Congress to spend on any object it deems beneficial. As Madison argued, the general welfare limitation must be read in light of the enumerated powers that follow; it is not an independent plenary spending authority. Hamilton's broader reading remains contested by originalists to this day.</div>
+    </div>
+  </div>
+  <div class="center-col">
+    <span class="section-label">Article I, Section 8, Clause 1</span>
+    <div class="const-text"><p>The Congress shall have Power To lay and collect Taxes, Duties, Imposts and Excises, to pay the Debts and provide for the common Defence and general Welfare of the United States; but all Duties, Imposts and Excises shall be uniform throughout the United States;</p></div>
+  </div>
+  <div class="margin-r">
+    <div class="comment" data-phil="living">
+      <div class="comment-tag">Living Constitution</div>
+      <div class="comment-body">The taxing and spending power has been broadly construed since the New Deal to sustain the modern federal government. In <em>NFIB v. Sebelius</em> (2012), Chief Justice Roberts upheld the ACA individual mandate as a valid exercise of the taxing power — even after concluding it exceeded the Commerce Clause — demonstrating that the Taxing Clause provides an independent and broad constitutional basis for domestic programs.</div>
+      <div class="comment-cases"><span class="case-ref">NFIB v. Sebelius (2012)</span><span class="case-ref">Helvering v. Davis (1937)</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- §8 Commerce -->
+<div class="const-row">
+  <div class="margin-l">
+    <div class="comment" data-phil="originalism">
+      <div class="comment-tag">Originalism</div>
+      <div class="comment-body">At the founding, "Commerce" meant trade — the exchange of goods — and "among the several States" required actual interstate movement or substantial interstate effect. The New Deal expansion reaching wholly intrastate activity abandoned the original meaning. <em>Wickard v. Filburn</em> (holding that a farmer growing wheat for personal consumption affected interstate commerce) would have been unrecognizable to any reader of the founding era. <em>Lopez</em> and <em>Morrison</em> represent a belated but correct course correction.</div>
+      <div class="comment-cases"><span class="case-ref">United States v. Lopez (1995)</span><span class="case-ref">United States v. Morrison (2000)</span></div>
+    </div>
+    <div class="comment" data-phil="textualism">
+      <div class="comment-tag">Textualism</div>
+      <div class="comment-body">The Necessary and Proper Clause permits regulation of intrastate activity when essential to a broader interstate scheme — this is not abandoning the text but following it. Justice Scalia's <em>Gonzales v. Raich</em> concurrence correctly applied this: home marijuana cultivation, if left unregulated, would undercut the interstate drug regime Congress validly established. "Necessary and proper" does not mean "indispensable" — it means plainly adapted to a legitimate end.</div>
+      <div class="comment-cases"><span class="case-ref">Gonzales v. Raich (2005)</span><span class="case-ref">McCulloch v. Maryland (1819)</span></div>
+    </div>
+  </div>
+  <div class="center-col">
+    <span class="section-label">Article I, Section 8, Clauses 3 &amp; 18</span>
+    <div class="const-text">
+      <p>To regulate Commerce with foreign Nations, and among the several States, and with the Indian Tribes;</p>
+      <p style="margin-top:16px; padding-top:16px; border-top:1px solid var(--rule-light);">To make all Laws which shall be necessary and proper for carrying into Execution the foregoing Powers, and all other Powers vested by this Constitution in the Government of the United States, or in any Department or Officer thereof.</p>
+    </div>
+  </div>
+  <div class="margin-r">
+    <div class="comment" data-phil="living">
+      <div class="comment-tag">Living Constitution</div>
+      <div class="comment-body">The Commerce Clause was designed to solve the coordination failure of the Articles of Confederation. As the national economy evolved from local markets to integrated supply chains, constitutional power grew with it. The aggregation principle — that local activities in combination substantially affect interstate commerce — reflects adaptation to economic reality. The Civil Rights Act of 1964, resting on the Commerce Clause to reach private discrimination in public accommodations, demonstrates the clause's moral as well as economic necessity.</div>
+      <div class="comment-cases"><span class="case-ref">Wickard v. Filburn (1942)</span><span class="case-ref">Heart of Atlanta Motel v. US (1964)</span></div>
+    </div>
+    <div class="comment" data-phil="pragmatism">
+      <div class="comment-tag">Pragmatism</div>
+      <div class="comment-body">The limits drawn in <em>Lopez</em> and <em>Morrison</em> have not produced stable or principled jurisprudence. A functional inquiry — does this regulation address a genuinely national problem that states cannot individually solve? — better serves the Constitution's structural purpose than recovering 18th-century definitions of "commerce" that no longer map onto modern economic reality.</div>
+    </div>
+  </div>
+</div>
+
+<!-- §8 War Powers / Military / Copyright -->
+<div class="const-row">
+  <div class="margin-l">
+    <div class="comment" data-phil="originalism">
+      <div class="comment-tag">Originalism</div>
+      <div class="comment-body">Congress has the sole power to declare war — a deliberate choice by the Framers to prevent unilateral executive warmaking. The Commander-in-Chief clause (Art. II, §2) gives the President direction of military operations once authorized; it does not subsume Congress's prior power to authorize force in the first place. Modern Presidents' routine initiation of hostilities without a declaration of war represents a structural constitutional failure.</div>
+    </div>
+    <div class="comment" data-phil="textualism">
+      <div class="comment-tag">Textualism</div>
+      <div class="comment-body">The Copyright Clause requires "limited Times" — a textual constraint the Court has nearly read out of existence. In <em>Eldred v. Ashcroft</em> (2003), the Court deferred to Congress's repeated 20-year extensions, effectively enabling perpetual copyright through serial renewal. Justice Breyer's dissent correctly argued this renders "limited" meaningless; the plain text imposes a real constraint.</div>
+      <div class="comment-cases"><span class="case-ref">Eldred v. Ashcroft (2003)</span></div>
+    </div>
+  </div>
+  <div class="center-col">
+    <span class="section-label">Article I, Section 8, Clauses 8–18 (Selected)</span>
+    <div class="const-text">
+      <p>To promote the Progress of Science and useful Arts, by securing for limited Times to Authors and Inventors the exclusive Right to their respective Writings and Discoveries;</p>
+      <p>To declare War, grant Letters of Marque and Reprisal, and make Rules concerning Captures on Land and Water;</p>
+      <p>To raise and support Armies, but no Appropriation of Money to that Use shall be for a longer Term than two Years;</p>
+      <p>To provide and maintain a Navy;</p>
+      <p>To provide for calling forth the Militia to execute the Laws of the Union, suppress Insurrections and repel Invasions;</p>
+    </div>
+  </div>
+  <div class="margin-r">
+    <div class="comment" data-phil="pragmatism">
+      <div class="comment-tag">Pragmatism</div>
+      <div class="comment-body">The War Powers Resolution (1973) attempted a functional fix to the constitutional gap between Congress's power to declare war and the President's role as Commander-in-Chief. Though routinely contested by Presidents, it reflects a pragmatic effort to restore the structural balance the Framers intended without reverting to formalist declarations of war that fit neither modern military reality nor the speed of contemporary conflict.</div>
+    </div>
+  </div>
+</div>
+
+<!-- §9 Limits -->
+<div class="article-divider sub-divider" id="art1s9"><div class="divider-label"><span class="divider-number">§ I.9</span>Article I, §9 — Limits on Congress</div></div>
+
+<div class="const-row">
+  <div class="margin-l">
+    <div class="comment" data-phil="natural-law">
+      <div class="comment-tag">Natural Law</div>
+      <div class="comment-body">Habeas corpus, the writ of attainder prohibition, and the ex post facto ban are among the Constitution's most fundamental protections — codifications of natural-law principles older than the document itself. They reflect the Framers' conviction that some governmental acts are intrinsically unjust regardless of their legal form: imprisoning without process, legislating guilt without trial, punishing retroactively for previously lawful conduct.</div>
+    </div>
+    <div class="comment" data-phil="living">
+      <div class="comment-tag">Living Constitution</div>
+      <div class="comment-body">The Suspension Clause applies to Guantánamo detainees. In <em>Boumediene v. Bush</em> (2008), the Court held that the constitutional privilege of habeas corpus extends to aliens held at a U.S.-controlled naval station — rejecting the government's argument that formal sovereignty over Cuban territory excluded constitutional protection. The writ's reach follows the reach of U.S. power, not merely formal U.S. territory.</div>
+      <div class="comment-cases"><span class="case-ref">Boumediene v. Bush (2008)</span></div>
+    </div>
+  </div>
+  <div class="center-col">
+    <span class="section-label">Article I, Section 9</span>
+    <div class="const-text">
+      <p><span class="superseded">[The Migration or Importation of such Persons as any of the States now existing shall think proper to admit, shall not be prohibited by the Congress prior to the Year one thousand eight hundred and eight, but a Tax or duty may be imposed on such Importation, not exceeding ten dollars for each Person.]</span></p>
+      <p>The Privilege of the Writ of Habeas Corpus shall not be suspended, unless when in Cases of Rebellion or Invasion the public Safety may require it.</p>
+      <p>No Bill of Attainder or ex post facto Law shall be passed.</p>
+      <p>No Capitation, or other direct, Tax shall be laid, unless in Proportion to the Census or enumeration herein before directed to be taken.</p>
+      <p>No Money shall be drawn from the Treasury, but in Consequence of Appropriations made by Law; and a regular Statement and Account of the Receipts and Expenditures of all public Money shall be published from time to time.</p>
+      <p>No Title of Nobility shall be granted by the United States: And no Person holding any Office of Profit or Trust under them, shall, without the Consent of the Congress, accept of any present, Emolument, Office, or Title, of any kind whatever, from any King, Prince, or foreign State.</p>
+    </div>
+  </div>
+  <div class="margin-r">
+    <div class="comment" data-phil="originalism">
+      <div class="comment-tag">Originalism</div>
+      <div class="comment-body">The Appropriations Clause — "No Money shall be drawn from the Treasury, but in Consequence of Appropriations made by Law" — is one of Congress's most powerful constitutional tools and one of the most underenforced. It was understood at the founding as the legislature's ultimate check on executive overreach: if the President cannot spend without congressional authorization, executive ambition is structurally constrained.</div>
+    </div>
+    <div class="comment" data-phil="textualism">
+      <div class="comment-tag">Textualism</div>
+      <div class="comment-body">The Emoluments Clause is textually straightforward: no federal officer may accept any "present, Emolument, Office, or Title" from a foreign government without congressional consent. Whether profits from foreign government patrons of a President's private businesses constitute "emoluments" is a textual question, not a policy one — and the original public meaning of "emolument" (any advantage, profit, or gain) is broad enough to include them.</div>
+    </div>
+  </div>
+</div>
+
+<!-- §10 Limits on States -->
+<div class="const-row">
+  <div class="margin-l">
+    <div class="comment" data-phil="originalism">
+      <div class="comment-tag">Originalism</div>
+      <div class="comment-body">The Contract Clause — prohibiting states from impairing the obligation of contracts — was one of the most actively litigated provisions of the 19th century. Its near-disappearance from modern jurisprudence reflects the New Deal-era shift toward legislative economic regulation. Originalists argue the Clause should still constrain states from retroactively altering obligations that parties freely negotiated and relied upon.</div>
+      <div class="comment-cases"><span class="case-ref">Dartmouth College v. Woodward (1819)</span></div>
+    </div>
+  </div>
+  <div class="center-col">
+    <span class="section-label">Article I, Section 10</span>
+    <div class="const-text">
+      <p>No State shall enter into any Treaty, Alliance, or Confederation; grant Letters of Marque and Reprisal; coin Money; emit Bills of Credit; make any Thing but gold and silver Coin a Tender in Payment of Debts; pass any Bill of Attainder, ex post facto Law, or Law impairing the Obligation of Contracts, or grant any Title of Nobility.</p>
+      <p>No State shall, without the Consent of the Congress, lay any Imposts or Duties on Imports or Exports, except what may be absolutely necessary for executing it's inspection Laws…</p>
+      <p>No State shall, without the Consent of Congress, lay any Duty of Tonnage, keep Troops, or Ships of War in time of Peace, enter into any Agreement or Compact with another State, or with a foreign Power, or engage in War, unless actually invaded, or in such imminent Danger as will not admit of delay.</p>
+    </div>
+  </div>
+  <div class="margin-r"></div>
+</div>
+
+<!-- ═══ ARTICLE II ════════════════════════════════════════════════ -->
+<div class="article-divider" id="art2"><div class="divider-label"><span class="divider-number">§ II</span>Article II — The Executive Branch</div></div>
+
+<!-- §1 Electoral College -->
+<div class="const-row">
+  <div class="margin-l">
+    <div class="comment" data-phil="originalism">
+      <div class="comment-tag">Originalism</div>
+      <div class="comment-body">The Electoral College was designed as a deliberative body of informed citizens, not a rubber stamp for popular vote totals. States may bind electors to the popular vote under their laws — as the Court held in <em>Chiafalo v. Washington</em> (2020). But the Framers' design reflected deep distrust of direct democracy and a preference for filtered, deliberate selection by those with knowledge of national candidates.</div>
+      <div class="comment-cases"><span class="case-ref">Chiafalo v. Washington (2020)</span></div>
+    </div>
+  </div>
+  <div class="center-col">
+    <span class="section-label">Article II, Section 1</span>
+    <div class="const-text">
+      <p>The executive Power shall be vested in a President of the United States of America. He shall hold his Office during the Term of four Years, and, together with the Vice President, chosen for the same Term, be elected, as follows:</p>
+      <p>Each State shall appoint, in such Manner as the Legislature thereof may direct, a Number of Electors, equal to the whole Number of Senators and Representatives to which the State may be entitled in the Congress: but no Senator or Representative, or Person holding an Office of Trust or Profit under the United States, shall be appointed an Elector.</p>
+      <p><span class="superseded">[The Electors shall meet in their respective States, and vote by Ballot for two Persons…]</span></p>
+      <p>No Person except a natural born Citizen, or a Citizen of the United States, at the time of the Adoption of this Constitution, shall be eligible to the Office of President; neither shall any Person be eligible to that Office who shall not have attained to the Age of thirty five Years, and been fourteen Years a Resident within the United States.</p>
+      <p>Before he enter on the Execution of his Office, he shall take the following Oath or Affirmation:—"I do solemnly swear (or affirm) that I will faithfully execute the Office of President of the United States, and will to the best of my Ability, preserve, protect and defend the Constitution of the United States."</p>
+    </div>
+  </div>
+  <div class="margin-r">
+    <div class="comment" data-phil="pragmatism">
+      <div class="comment-tag">Pragmatism</div>
+      <div class="comment-body">The Electoral College has twice in the last 25 years produced Presidents who lost the popular vote by significant margins. Whether or not this was the Framers' intent, the functional consequences — a democratic legitimacy deficit, winner-take-all distortions, and campaign concentration in "swing states" — are real. The National Popular Vote Interstate Compact represents a pragmatic adaptation achievable without formal amendment.</div>
+    </div>
+  </div>
+</div>
+
+<!-- §2 Commander in Chief / Appointments -->
+<div class="const-row">
+  <div class="margin-l">
+    <div class="comment" data-phil="originalism">
+      <div class="comment-tag">Originalism</div>
+      <div class="comment-body">The Appointments Clause creates a specific constitutional structure: principal officers must be nominated by the President and confirmed by the Senate; inferior officers may be vested by Congress in lesser actors. Independent agencies insulated from presidential removal create officers who exercise executive power but answer to no democratically accountable official — a structure the Framers would not have recognized as consistent with the unitary executive they designed.</div>
+      <div class="comment-cases"><span class="case-ref">Seila Law v. CFPB (2020)</span><span class="case-ref">Myers v. United States (1926)</span></div>
+    </div>
+  </div>
+  <div class="center-col">
+    <span class="section-label">Article II, Section 2</span>
+    <div class="const-text">
+      <p>The President shall be Commander in Chief of the Army and Navy of the United States, and of the Militia of the several States, when called into the actual Service of the United States; he may require the Opinion, in writing, of the principal Officer in each of the executive Departments, upon any Subject relating to the Duties of their respective Offices, and he shall have Power to grant Reprieves and Pardons for Offences against the United States, except in Cases of Impeachment.</p>
+      <p>He shall have Power, by and with the Advice and Consent of the Senate, to make Treaties, provided two thirds of the Senators present concur; and he shall nominate, and by and with the Advice and Consent of the Senate, shall appoint Ambassadors, other public Ministers and Consuls, Judges of the supreme Court, and all other Officers of the United States, whose Appointments are not herein otherwise provided for…</p>
+    </div>
+  </div>
+  <div class="margin-r">
+    <div class="comment" data-phil="pragmatism">
+      <div class="comment-tag">Pragmatism</div>
+      <div class="comment-body">Justice Robert Jackson's tripartite framework in <em>Youngstown Sheet &amp; Tube</em> (1952) remains the most useful tool for assessing executive power: maximum when acting with Congressional authorization, minimum when acting against Congressional will, uncertain in the twilight zone between. This functional approach acknowledges that constitutional text alone cannot resolve the structural ambiguities between Commander-in-Chief and legislative war powers.</div>
+      <div class="comment-cases"><span class="case-ref">Youngstown Sheet &amp; Tube v. Sawyer (1952)</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- §3 Take Care -->
+<div class="const-row">
+  <div class="margin-l">
+    <div class="comment" data-phil="textualism">
+      <div class="comment-tag">Textualism</div>
+      <div class="comment-body">The Take Care Clause imposes a duty, not merely a power: the President "shall" faithfully execute the laws. A President who categorically refuses to enforce validly enacted statutes — immigration law, drug law, environmental law — violates this clause regardless of policy disagreement. Presidential non-enforcement is different from prosecutorial discretion; the latter involves resource allocation, the former is a constitutional nullification of legislation.</div>
+    </div>
+  </div>
+  <div class="center-col">
+    <span class="section-label">Article II, Section 3</span>
+    <div class="const-text">
+      <p>He shall from time to time give to the Congress Information of the State of the Union, and recommend to their Consideration such Measures as he shall judge necessary and expedient; he may, on extraordinary Occasions, convene both Houses, or either of them, and in Case of Disagreement between them, with Respect to the Time of Adjournment, he may adjourn them to such Time as he shall think proper; he shall receive Ambassadors and other public Ministers; he shall take Care that the Laws be faithfully executed, and shall Commission all the Officers of the United States.</p>
+    </div>
+  </div>
+  <div class="margin-r">
+    <div class="comment" data-phil="pragmatism">
+      <div class="comment-tag">Pragmatism</div>
+      <div class="comment-body">Prosecutorial discretion — the executive's decision how to allocate limited enforcement resources — is a constitutional and practical necessity. DACA reflects this discretion applied to immigration enforcement priorities. The line between legitimate prioritization and unconstitutional nullification is genuinely difficult. <em>United States v. Texas</em> (2023) left this line largely undrawn, reflecting the Court's own uncertainty about justiciability of Executive non-enforcement.</div>
+      <div class="comment-cases"><span class="case-ref">United States v. Texas (2023)</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- §4 Impeachment -->
+<div class="const-row">
+  <div class="margin-l">
+    <div class="comment" data-phil="textualism">
+      <div class="comment-tag">Textualism</div>
+      <div class="comment-body">"Treason, Bribery, or other high Crimes and Misdemeanors" — the last phrase derives from English parliamentary practice where "high misdemeanors" meant offenses against the state and public trust, not necessarily criminal acts. The text deliberately does not require a criminal conviction. Whether a former President can be impeached after leaving office is contested; the text says "The President… shall be removed" — which implies current officeholders, but Art. I §3 separately authorizes disqualification from future office.</div>
+    </div>
+  </div>
+  <div class="center-col">
+    <span class="section-label">Article II, Section 4</span>
+    <div class="const-text"><p>The President, Vice President and all civil Officers of the United States, shall be removed from Office on Impeachment for, and Conviction of, Treason, Bribery, or other high Crimes and Misdemeanors.</p></div>
+  </div>
+  <div class="margin-r">
+    <div class="comment" data-phil="originalism">
+      <div class="comment-tag">Originalism</div>
+      <div class="comment-body">The scope of "high Crimes and Misdemeanors" was understood at the founding to encompass serious abuses of official position. Alexander Hamilton in <em>Federalist No. 65</em> described impeachable offenses as "those which proceed from the misconduct of public men, or, in other words, from the abuse or violation of some public trust." This is an objective, historically grounded standard — not simply whatever a majority of the House declares it to be.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ ARTICLE III ═══════════════════════════════════════════════ -->
+<div class="article-divider" id="art3"><div class="divider-label"><span class="divider-number">§ III</span>Article III — The Judicial Branch</div></div>
+
+<div class="const-row">
+  <div class="margin-l">
+    <div class="comment" data-phil="originalism">
+      <div class="comment-tag">Originalism</div>
+      <div class="comment-body">Marbury v. Madison established judicial review — but the Constitution never mentions it. Marshall's logic (that courts must interpret law to apply it) was inspired but inferential. What the text clearly specifies is the case-or-controversy requirement, which excludes advisory opinions, political questions, and manufactured disputes. That structural limit deserves more enforcement than it currently receives, particularly as plaintiffs have expanded theories of organizational and ideological "standing."</div>
+      <div class="comment-cases"><span class="case-ref">Marbury v. Madison (1803)</span></div>
+    </div>
+  </div>
+  <div class="center-col">
+    <span class="section-label">Article III, Sections 1–2</span>
+    <div class="const-text">
+      <p>The judicial Power of the United States, shall be vested in one supreme Court, and in such inferior Courts as the Congress may from time to time ordain and establish. The Judges, both of the supreme and inferior Courts, shall hold their Offices during good Behaviour, and shall, at stated Times, receive for their Services, a Compensation, which shall not be diminished during their Continuance in Office.</p>
+      <p>The judicial Power shall extend to all Cases, in Law and Equity, arising under this Constitution, the Laws of the United States, and Treaties made, or which shall be made, under their Authority;—to all Cases affecting Ambassadors, other public Ministers and Consuls;—to all Cases of admiralty and maritime Jurisdiction;—to Controversies to which the United States shall be a Party;—to Controversies between two or more States;—between a State and Citizens of another State;—between Citizens of different States…</p>
+    </div>
+  </div>
+  <div class="margin-r">
+    <div class="comment" data-phil="living">
+      <div class="comment-tag">Living Constitution</div>
+      <div class="comment-body">Article III's case-or-controversy requirement protects judicial legitimacy — but "cases" encompasses the full range of constitutional injuries that arise as society changes. Recognition that constitutional injuries can be intangible (stigma, exclusion, dignitary harm) reflects an evolved understanding of who may invoke federal judicial power in a republic committed to equality. The Warren Court's expansions of standing enabled civil rights litigation that defined the century.</div>
+      <div class="comment-cases"><span class="case-ref">Cooper v. Aaron (1958)</span></div>
+    </div>
+    <div class="comment" data-phil="pragmatism">
+      <div class="comment-tag">Pragmatism</div>
+      <div class="comment-body">Life tenure "during good Behaviour" was designed to insulate judges from political pressure. But the Framers assumed death and voluntary retirement would create natural turnover; modern medicine has extended judicial tenures far beyond anything they imagined. Functional arguments for term limits on Supreme Court justices — preserving the institution's democratic legitimacy while maintaining independence — do not require a constitutional amendment if structured correctly.</div>
+    </div>
+  </div>
+</div>
+
+<!-- §3 Treason -->
+<div class="const-row">
+  <div class="margin-l">
+    <div class="comment" data-phil="textualism">
+      <div class="comment-tag">Textualism</div>
+      <div class="comment-body">Treason is the only crime the Constitution defines. The Framers' narrowness was deliberate: in England, "treason" had expanded through legislation and construction to cover political opposition. The two-witness requirement for overt acts reflects this historical lesson — the Framers structurally constrained prosecutorial overreach by embedding evidentiary requirements in the constitutional text itself.</div>
+    </div>
+  </div>
+  <div class="center-col">
+    <span class="section-label">Article III, Section 3</span>
+    <div class="const-text">
+      <p>Treason against the United States, shall consist only in levying War against them, or in adhering to their Enemies, giving them Aid and Comfort. No Person shall be convicted of Treason unless on the Testimony of two Witnesses to the same overt Act, or on Confession in open Court.</p>
+      <p>The Congress shall have Power to declare the Punishment of Treason, but no Attainder of Treason shall work Corruption of Blood, or Forfeiture except during the Life of the Person attainted.</p>
+    </div>
+  </div>
+  <div class="margin-r"></div>
+</div>
+
+<!-- ═══ ARTICLE IV ════════════════════════════════════════════════ -->
+<div class="article-divider" id="art4"><div class="divider-label"><span class="divider-number">§ IV</span>Article IV — The States</div></div>
+
+<div class="const-row">
+  <div class="margin-l">
+    <div class="comment" data-phil="textualism">
+      <div class="comment-tag">Textualism</div>
+      <div class="comment-body">The Full Faith and Credit Clause requires states to recognize the acts and judicial proceedings of other states. Congress used this power in the Defense of Marriage Act (1996) to let states refuse recognition of same-sex marriages performed elsewhere — a statutory carve-out the Court never ruled on constitutionally, as <em>Obergefell</em> mooted the question by constitutionalizing same-sex marriage directly under the Fourteenth Amendment.</div>
+    </div>
+  </div>
+  <div class="center-col">
+    <span class="section-label">Article IV, Sections 1–4</span>
+    <div class="const-text">
+      <p>Full Faith and Credit shall be given in each State to the public Acts, Records, and judicial Proceedings of every other State. And the Congress may by general Laws prescribe the Manner in which such Acts, Records and Proceedings shall be proved, and the Effect thereof.</p>
+      <p>The Citizens of each State shall be entitled to all Privileges and Immunities of Citizens in the several States.</p>
+      <p>A Person charged in any State with Treason, Felony, or other Crime, who shall flee from Justice, and be found in another State, shall on Demand of the executive Authority of the State from which he fled, be delivered up, to be removed to the State having Jurisdiction of the Crime.</p>
+      <p>New States may be admitted by the Congress into this Union; but no new State shall be formed or erected within the Jurisdiction of any other State…</p>
+      <p>The United States shall guarantee to every State in this Union a Republican Form of Government, and shall protect each of them against Invasion; and on Application of the Legislature, or of the Executive (when the Legislature cannot be convened) against domestic Violence.</p>
+    </div>
+  </div>
+  <div class="margin-r">
+    <div class="comment" data-phil="pragmatism">
+      <div class="comment-tag">Pragmatism</div>
+      <div class="comment-body">The Guarantee Clause — requiring a "Republican Form of Government" in each state — is judicially unenforceable under the political question doctrine established in <em>Luther v. Borden</em> (1849). This is pragmatically defensible: courts lack standards for determining what makes government "republican," and enforcement would require them to adjudicate the legitimacy of sitting state governments. Some scholars argue this leaves the clause as an empty promise.</div>
+      <div class="comment-cases"><span class="case-ref">Luther v. Borden (1849)</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ ARTICLE V ═════════════════════════════════════════════════ -->
+<div class="article-divider" id="art5"><div class="divider-label"><span class="divider-number">§ V</span>Article V — The Amendment Process</div></div>
+
+<div class="const-row">
+  <div class="margin-l">
+    <div class="comment" data-phil="originalism">
+      <div class="comment-tag">Originalism</div>
+      <div class="comment-body">Article V is the originalist's foundational argument: the Framers created a formal, deliberate amendment process precisely because they wanted constitutional change to require supermajority consensus. Courts that update the Constitution's meaning through interpretation circumvent the democratic process the Framers designed for constitutional change. The difficulty of amendment is a feature, not a bug — it forces broad political agreement before fundamental law is altered.</div>
+    </div>
+  </div>
+  <div class="center-col">
+    <span class="section-label">Article V</span>
+    <div class="const-text">
+      <p>The Congress, whenever two thirds of both Houses shall deem it necessary, shall propose Amendments to this Constitution, or, on the Application of the Legislatures of two thirds of the several States, shall call a Convention for proposing Amendments, which, in either Case, shall be valid to all Intents and Purposes, as Part of this Constitution, when ratified by the Legislatures of three fourths of the several States, or by Conventions in three fourths thereof, as the one or the other Mode of Ratification may be proposed by the Congress…</p>
+    </div>
+  </div>
+  <div class="margin-r">
+    <div class="comment" data-phil="living">
+      <div class="comment-tag">Living Constitution</div>
+      <div class="comment-body">The amendment process is so demanding — two-thirds of Congress plus three-fourths of states — that it has effectively frozen the Constitution on many questions where democratic majorities favor change. The gap between what the People want and what the text provides is filled, necessarily, by interpretation. A Constitution that cannot be democratically updated must be judicially evolved or it becomes a counter-majoritarian instrument of the past against the present.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ ARTICLE VI ════════════════════════════════════════════════ -->
+<div class="article-divider" id="art6"><div class="divider-label"><span class="divider-number">§ VI</span>Article VI — Supremacy Clause</div></div>
+
+<div class="const-row">
+  <div class="margin-l">
+    <div class="comment" data-phil="textualism">
+      <div class="comment-tag">Textualism</div>
+      <div class="comment-body">The Supremacy Clause makes federal law the "supreme Law of the Land" — but only federal law made "in pursuance" of the Constitution. An unconstitutional federal law is not supreme over state law. This textual qualifier, often overlooked, is significant: the Clause elevates constitutional federal law over state law, but does not elevate unconstitutional federal action over state authority.</div>
+    </div>
+  </div>
+  <div class="center-col">
+    <span class="section-label">Article VI, Clause 2</span>
+    <div class="const-text">
+      <p>This Constitution, and the Laws of the United States which shall be made in Pursuance thereof; and all Treaties made, or which shall be made, under the Authority of the United States, shall be the supreme Law of the Land; and the Judges in every State shall be bound thereby, any Thing in the Constitution or Laws of any State to the Contrary notwithstanding.</p>
+    </div>
+  </div>
+  <div class="margin-r">
+    <div class="comment" data-phil="pragmatism">
+      <div class="comment-tag">Pragmatism</div>
+      <div class="comment-body">Federal preemption doctrine — determining when federal law displaces state law — involves subtle questions about congressional intent and the scope of regulatory schemes. Functional analysis of whether a state law actually conflicts with or obstructs federal purposes often matters more than formal textual analysis. <em>Arizona v. United States</em> (2012) illustrates this: the Court found implied preemption of state immigration enforcement even where no explicit conflict existed.</div>
+      <div class="comment-cases"><span class="case-ref">Arizona v. United States (2012)</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ARTICLE VII -->
+<div class="const-row">
+  <div class="margin-l"></div>
+  <div class="center-col">
+    <span class="section-label">Article VII — Ratification</span>
+    <div class="const-text"><p>The Ratification of the Conventions of nine States, shall be sufficient for the Establishment of this Constitution between the States so ratifying the Same.</p></div>
+  </div>
+  <div class="margin-r"></div>
+</div>
+
+<!-- ═══ AMENDMENTS ════════════════════════════════════════════════ -->
+<div class="article-divider no-collapse"><div class="divider-label"><span class="divider-number">Am. I–X</span>The Bill of Rights · 1791</div></div>
+
+<!-- AM I -->
+<div class="article-divider" id="am1"><div class="divider-label"><span class="divider-number">Am. I</span>First Amendment — Speech, Religion, Press, Assembly</div></div>
+
+<div class="const-row">
+  <div class="margin-l">
+    <div class="comment" data-phil="textualism">
+      <div class="comment-tag">Textualism</div>
+      <div class="comment-body">"Congress shall make no law." No law. Justice Hugo Black took these words at face value as an absolute command. Courts that apply balancing tests — weighing speech value against government interest — substitute their own judgment for the Constitution's unambiguous text. The First Amendment was designed to take that judgment away from government entirely. <em>No law</em> meant what it said.</div>
+    </div>
+    <div class="comment" data-phil="originalism">
+      <div class="comment-tag">Originalism</div>
+      <div class="comment-body">The Establishment Clause originally prohibited a national church or federal preference among denominations — not all government acknowledgment of religion. It was partly a federalism provision, leaving religious establishment to states. Non-preferentialism (government may support religion generally without favoring one sect) is the historically accurate reading; strict separationism as required by <em>Lemon v. Kurtzman</em>'s three-part test had no founding-era support and has since been abandoned by the Court.</div>
+      <div class="comment-cases"><span class="case-ref">Kennedy v. Bremerton (2022)</span><span class="case-ref">Town of Greece v. Galloway (2014)</span></div>
+    </div>
+  </div>
+  <div class="center-col">
+    <span class="section-label">Amendment I · 1791</span>
+    <div class="const-text"><p>Congress shall make no law respecting an establishment of religion, or prohibiting the free exercise thereof; or abridging the freedom of speech, or of the press; or the right of the people peaceably to assemble, and to petition the Government for a redress of grievances.</p></div>
+  </div>
+  <div class="margin-r">
+    <div class="comment" data-phil="living">
+      <div class="comment-tag">Living Constitution</div>
+      <div class="comment-body">The values underlying the First Amendment — human dignity, democratic self-governance, the marketplace of ideas — apply with full force to forms of expression the Founders could not have imagined. The evolution from "clear and present danger" to the <em>Brandenburg</em> standard reflects deepening understanding of how censorship chills speech and distorts democracy. A living First Amendment protects the principle, not only the media landscape of 1791.</div>
+      <div class="comment-cases"><span class="case-ref">Brandenburg v. Ohio (1969)</span><span class="case-ref">New York Times v. Sullivan (1964)</span></div>
+    </div>
+    <div class="comment" data-phil="pragmatism">
+      <div class="comment-tag">Pragmatism</div>
+      <div class="comment-body">Absolutist First Amendment doctrine can produce antidemocratic results. Unlimited corporate campaign expenditures (<em>Citizens United</em>), online platforms as de facto public squares, and algorithmic amplification of extremism alter the practical meaning of "freedom of speech" in ways the text cannot resolve. Courts must consider the functional effect of First Amendment doctrine on the democratic system the Amendment was designed to protect.</div>
+      <div class="comment-cases"><span class="case-ref">Citizens United v. FEC (2010)</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- AM II -->
+<div class="article-divider" id="am2"><div class="divider-label"><span class="divider-number">Am. II</span>Second Amendment — Right to Keep and Bear Arms</div></div>
+
+<div class="const-row">
+  <div class="margin-l">
+    <div class="comment" data-phil="originalism">
+      <div class="comment-tag">Originalism</div>
+      <div class="comment-body">The Second Amendment protects an individual right to keep and bear arms for traditionally lawful purposes, including self-defense in the home. The prefatory clause ("A well regulated Militia") announces purpose but does not limit the operative right. Historical analysis of founding-era statutes, treatises, and common law confirms widespread individual arms-bearing as a presumed pre-political right. Justice Scalia's majority opinion in <em>Heller</em> vindicated this reading after decades of lower-court distortion.</div>
+      <div class="comment-cases"><span class="case-ref">District of Columbia v. Heller (2008)</span><span class="case-ref">NY Rifle &amp; Pistol v. Bruen (2022)</span></div>
+    </div>
+    <div class="comment" data-phil="textualism">
+      <div class="comment-tag">Textualism</div>
+      <div class="comment-body"><em>Bruen</em> correctly held that Second Amendment challenges must be resolved by historical analogue — whether the regulation is consistent with the tradition of firearm regulation at the time of the founding or Reconstruction. Courts should not apply balancing tests invented by lower courts with no textual basis. The text, history, and tradition standard anchors courts to legal sources rather than policy preferences. The difficulty of applying it is not a reason to abandon textual fidelity.</div>
+      <div class="comment-cases"><span class="case-ref">NY Rifle &amp; Pistol v. Bruen (2022)</span></div>
+    </div>
+  </div>
+  <div class="center-col">
+    <span class="section-label">Amendment II · 1791</span>
+    <div class="const-text"><p>A well regulated Militia, being necessary to the security of a free State, the right of the people to keep and bear Arms, shall not be infringed.</p></div>
+  </div>
+  <div class="margin-r">
+    <div class="comment" data-phil="living">
+      <div class="comment-tag">Living Constitution</div>
+      <div class="comment-body">For over two centuries, courts uniformly read the Second Amendment as protecting a collective right tied to militia service — fully consistent with the prefatory clause's plain text. <em>Heller</em>'s historical analysis was selective and ideologically motivated. Even granting an individual right in 1791, the Founders could not have imagined weapons capable of firing hundreds of rounds per minute. The contemporary reality of mass shootings constitutes precisely the kind of changed circumstance a living Constitution must address.</div>
+      <div class="comment-cases"><span class="case-ref">United States v. Miller (1939)</span><span class="case-ref">Heller (2008) (dissent)</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- AM III -->
+<div class="const-row">
+  <div class="margin-l"></div>
+  <div class="center-col">
+    <span class="section-label">Amendment III · 1791</span>
+    <div class="const-text"><p>No Soldier shall, in time of peace be quartered in any house, without the consent of the Owner, nor in time of war, but in a manner to be prescribed by law.</p></div>
+  </div>
+  <div class="margin-r">
+    <div class="comment" data-phil="natural-law">
+      <div class="comment-tag">Natural Law</div>
+      <div class="comment-body">The Third Amendment's near-total absence from modern litigation does not diminish its constitutional significance. Justice Douglas cited it in <em>Griswold v. Connecticut</em> (1965) as one of several provisions whose "penumbras" generate a right to privacy — the sanctuary of the home against state intrusion is older than the Constitution itself, rooted in natural law and the English common law principle that a man's home is his castle.</div>
+      <div class="comment-cases"><span class="case-ref">Griswold v. Connecticut (1965)</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- AM IV -->
+<div class="article-divider" id="am4"><div class="divider-label"><span class="divider-number">Am. IV</span>Fourth Amendment — Search and Seizure</div></div>
+
+<div class="const-row">
+  <div class="margin-l">
+    <div class="comment" data-phil="originalism">
+      <div class="comment-tag">Originalism</div>
+      <div class="comment-body">The Fourth Amendment responded directly to general warrants and writs of assistance that allowed British officials to search colonists' homes at will. The original "trespass" model protects against physical intrusion into property. Thermal imaging of a home violates this because it is the functional equivalent of physical entry. Technology that allows government to observe what occurs inside a dwelling without crossing the threshold must be treated as a search.</div>
+      <div class="comment-cases"><span class="case-ref">Kyllo v. United States (2001)</span><span class="case-ref">Florida v. Jardines (2013)</span></div>
+    </div>
+  </div>
+  <div class="center-col">
+    <span class="section-label">Amendment IV · 1791</span>
+    <div class="const-text"><p>The right of the people to be secure in their persons, houses, papers, and effects, against unreasonable searches and seizures, shall not be violated, and no Warrants shall issue, but upon probable cause, supported by Oath or affirmation, and particularly describing the place to be searched, and the persons or things to be seized.</p></div>
+  </div>
+  <div class="margin-r">
+    <div class="comment" data-phil="living">
+      <div class="comment-tag">Living Constitution</div>
+      <div class="comment-body">The Fourth Amendment's core value is freedom from government surveillance. When the state tracks a person's every movement for months via cell-site location data without a warrant, the result is more intrusive than any general warrant the Founders feared. Chief Justice Roberts in <em>Carpenter</em> correctly held the warrant requirement applies to comprehensive digital location records — applying the Amendment's principle, not merely its 18th-century applications, to the surveillance state.</div>
+      <div class="comment-cases"><span class="case-ref">Carpenter v. United States (2018)</span><span class="case-ref">Katz v. United States (1967)</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- AM V -->
+<div class="article-divider" id="am5"><div class="divider-label"><span class="divider-number">Am. V</span>Fifth Amendment — Grand Jury, Self-Incrimination, Due Process, Takings</div></div>
+
+<div class="const-row">
+  <div class="margin-l">
+    <div class="comment" data-phil="textualism">
+      <div class="comment-tag">Textualism</div>
+      <div class="comment-body">The Takings Clause says "public use" — not "public purpose," not "public benefit." In <em>Kelo v. New London</em> (2005), the majority permitted a transfer of private property to a private developer for economic redevelopment. Justice O'Connor's dissent correctly argued that if projected economic benefit qualifies as "public use," the clause becomes a dead letter. Every taking could be justified by the general benefits of economic activity — rendering the textual limitation meaningless.</div>
+      <div class="comment-cases"><span class="case-ref">Kelo v. New London (2005) (dissent)</span></div>
+    </div>
+    <div class="comment" data-phil="natural-law">
+      <div class="comment-tag">Natural Law</div>
+      <div class="comment-body">The right against self-incrimination encodes a natural-law principle: the state may not use a person as an instrument of their own destruction. The common law privilege against self-incrimination predates the Constitution and was understood as a protection of personal dignity and moral autonomy — not merely a procedural technicality. <em>Miranda v. Arizona</em> gave it institutional form appropriate to the modern interrogation context.</div>
+      <div class="comment-cases"><span class="case-ref">Miranda v. Arizona (1966)</span></div>
+    </div>
+  </div>
+  <div class="center-col">
+    <span class="section-label">Amendment V · 1791</span>
+    <div class="const-text"><p>No person shall be held to answer for a capital, or otherwise infamous crime, unless on a presentment or indictment of a Grand Jury, except in cases arising in the land or naval forces, or in the Militia, when in actual service in time of War or public danger; nor shall any person be subject for the same offence to be twice put in jeopardy of life or limb; nor shall be compelled in any criminal case to be a witness against himself, nor be deprived of life, liberty, or property, without due process of law; nor shall private property be taken for public use, without just compensation.</p></div>
+  </div>
+  <div class="margin-r">
+    <div class="comment" data-phil="pragmatism">
+      <div class="comment-tag">Pragmatism</div>
+      <div class="comment-body">What constitutes "public use" is quintessentially a legislative judgment. Economic development — jobs, tax base, revitalization — is a legitimate public purpose better assessed by local governments than courts. The <em>Kelo</em> majority correctly deferred to New London's comprehensive development plan. The democratic response that followed — 47 states enacting stronger property protections — demonstrates that political accountability operates as the constitutional structure intends when courts appropriately limit their role.</div>
+      <div class="comment-cases"><span class="case-ref">Kelo v. New London (2005)</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- AM VI -->
+<div class="const-row">
+  <div class="margin-l">
+    <div class="comment" data-phil="originalism">
+      <div class="comment-tag">Originalism</div>
+      <div class="comment-body">The Confrontation Clause requires that the accused be able to confront the witnesses against him. Justice Scalia's majority in <em>Crawford v. Washington</em> (2004) restored this to its historical meaning: testimonial statements by absent witnesses are inadmissible unless the defendant had a prior opportunity to cross-examine. This overruled the flexible "reliability" test of <em>Ohio v. Roberts</em> — a classic originalist correction of a precedent that had drifted from the text.</div>
+      <div class="comment-cases"><span class="case-ref">Crawford v. Washington (2004)</span></div>
+    </div>
+  </div>
+  <div class="center-col">
+    <span class="section-label">Amendment VI · 1791</span>
+    <div class="const-text"><p>In all criminal prosecutions, the accused shall enjoy the right to a speedy and public trial, by an impartial jury of the State and district wherein the crime shall have been committed, which district shall have been previously ascertained by law, and to be informed of the nature and cause of the accusation; to be confronted with the witnesses against him; to have compulsory process for obtaining witnesses in his favor, and to have the Assistance of Counsel for his defence.</p></div>
+  </div>
+  <div class="margin-r">
+    <div class="comment" data-phil="living">
+      <div class="comment-tag">Living Constitution</div>
+      <div class="comment-body">The right to counsel has evolved far beyond its 1791 meaning. <em>Gideon v. Wainwright</em> (1963) incorporated it against the states and established the right to appointed counsel for all felony defendants — a result plainly not contemplated at the founding but essential to the Sixth Amendment's underlying guarantee of a fair trial. Effective assistance of counsel, recognized in <em>Strickland v. Washington</em>, extends the right to its functional purpose.</div>
+      <div class="comment-cases"><span class="case-ref">Gideon v. Wainwright (1963)</span><span class="case-ref">Strickland v. Washington (1984)</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- AM VII -->
+<div class="const-row">
+  <div class="margin-l"></div>
+  <div class="center-col">
+    <span class="section-label">Amendment VII · 1791</span>
+    <div class="const-text"><p>In Suits at common law, where the value in controversy shall exceed twenty dollars, the right of trial by jury shall be preserved, and no fact tried by a jury, shall be otherwise re-examined in any Court of the United States, than according to the rules of the common law.</p></div>
+  </div>
+  <div class="margin-r"></div>
+</div>
+
+<!-- AM VIII -->
+<div class="article-divider" id="am8"><div class="divider-label"><span class="divider-number">Am. VIII</span>Eighth Amendment — Cruel and Unusual Punishment</div></div>
+
+<div class="const-row">
+  <div class="margin-l">
+    <div class="comment" data-phil="originalism">
+      <div class="comment-tag">Originalism</div>
+      <div class="comment-body">The phrase "cruel and unusual" had a fixed historical meaning at the founding: punishments that were disproportionate, torturous, or not sanctioned by English common law. It does not evolve with society's moral sensibility. Justice Scalia argued the death penalty is clearly constitutional — it is explicitly mentioned in the Fifth Amendment — and that the Court's "evolving standards of decency" test invites judges to impose their own moral views under cover of constitutional interpretation.</div>
+    </div>
+  </div>
+  <div class="center-col">
+    <span class="section-label">Amendment VIII · 1791</span>
+    <div class="const-text"><p>Excessive bail shall not be required, nor excessive fines imposed, nor cruel and unusual punishments inflicted.</p></div>
+  </div>
+  <div class="margin-r">
+    <div class="comment" data-phil="living">
+      <div class="comment-tag">Living Constitution</div>
+      <div class="comment-body">The Eighth Amendment is the Constitution's clearest invitation to moral evolution. Chief Justice Warren wrote in <em>Trop v. Dulles</em> (1958) that it "must draw its meaning from the evolving standards of decency that mark the progress of a maturing society." The Court has applied this to ban execution of the intellectually disabled (<em>Atkins</em>), of juvenile offenders (<em>Roper</em>), and most recently to ban mandatory life without parole for juveniles (<em>Miller v. Alabama</em>).</div>
+      <div class="comment-cases"><span class="case-ref">Trop v. Dulles (1958)</span><span class="case-ref">Atkins v. Virginia (2002)</span><span class="case-ref">Roper v. Simmons (2005)</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- AM IX -->
+<div class="article-divider" id="am9"><div class="divider-label"><span class="divider-number">Am. IX</span>Ninth Amendment — Unenumerated Rights</div></div>
+
+<div class="const-row">
+  <div class="margin-l">
+    <div class="comment" data-phil="originalism">
+      <div class="comment-tag">Originalism</div>
+      <div class="comment-body">The Ninth Amendment was included to prevent the inference that the enumerated rights in the Bill of Rights were exhaustive — not to authorize courts to invent new rights. Justice Robert Bork famously called it an "inkblot": we cannot know what it protects without historical grounding. Unenumerated rights must be deeply rooted in the nation's history and traditions to qualify as constitutionally protected — the standard articulated in <em>Washington v. Glucksberg</em>.</div>
+      <div class="comment-cases"><span class="case-ref">Washington v. Glucksberg (1997)</span></div>
+    </div>
+  </div>
+  <div class="center-col">
+    <span class="section-label">Amendment IX · 1791</span>
+    <div class="const-text"><p>The enumeration in the Constitution, of certain rights, shall not be construed to deny or disparage others retained by the people.</p></div>
+  </div>
+  <div class="margin-r">
+    <div class="comment" data-phil="natural-law">
+      <div class="comment-tag">Natural Law</div>
+      <div class="comment-body">The Ninth Amendment is the Constitution's clearest acknowledgment that rights precede the document. The Founders, steeped in natural-law thought, understood that the people possessed rights beyond those enumerated — natural rights, inherent in personhood, that government could not extinguish by omission. Treating the Ninth Amendment as a "mere rule of construction" drains it of its philosophical substance. Justice Goldberg's <em>Griswold</em> concurrence correctly read it as independently operative.</div>
+      <div class="comment-cases"><span class="case-ref">Griswold v. Connecticut (1965)</span></div>
+    </div>
+    <div class="comment" data-phil="living">
+      <div class="comment-tag">Living Constitution</div>
+      <div class="comment-body">The Ninth Amendment refutes the originalist argument that unenumerated rights are judicial invention. The Framers explicitly stated that the listing of some rights does not deny others. A living constitutionalist reading takes this at face value: privacy, autonomy, and dignity are rights "retained by the people" even if unspecified, and courts are authorized to recognize them as society's understanding of liberty deepens.</div>
+    </div>
+  </div>
+</div>
+
+<!-- AM X -->
+<div class="article-divider" id="am10"><div class="divider-label"><span class="divider-number">Am. X</span>Tenth Amendment — Reserved Powers</div></div>
+
+<div class="const-row">
+  <div class="margin-l">
+    <div class="comment" data-phil="originalism">
+      <div class="comment-tag">Originalism</div>
+      <div class="comment-body">The Tenth Amendment reserves to states all powers not delegated to the federal government — a structural limit that the Supreme Court effectively abandoned during the New Deal and partially restored in the 1990s. The anti-commandeering doctrine, established in <em>New York v. United States</em> and <em>Printz v. United States</em>, prohibits Congress from conscripting state legislative and executive officials to administer federal programs — a critical protection of dual sovereignty.</div>
+      <div class="comment-cases"><span class="case-ref">New York v. United States (1992)</span><span class="case-ref">Printz v. United States (1997)</span></div>
+    </div>
+  </div>
+  <div class="center-col">
+    <span class="section-label">Amendment X · 1791</span>
+    <div class="const-text"><p>The powers not delegated to the United States by the Constitution, nor prohibited by it to the States, are reserved to the States respectively, or to the people.</p></div>
+  </div>
+  <div class="margin-r">
+    <div class="comment" data-phil="living">
+      <div class="comment-tag">Living Constitution</div>
+      <div class="comment-body">The Tenth Amendment is a truism, as Justice Stone wrote in <em>United States v. Darby</em> (1941): it states a self-evident principle that has no independent operative content beyond what other provisions establish. The real question is always whether a given power has been "delegated" — and that is answered by construing the powers granted in Articles I through VI, not by invoking the Tenth Amendment as an independent limit on federal authority.</div>
+      <div class="comment-cases"><span class="case-ref">United States v. Darby (1941)</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ POST-BILL OF RIGHTS AMENDMENTS ═══════════════════════════ -->
+<div class="article-divider no-collapse"><div class="divider-label"><span class="divider-number">Am. XI+</span>Selected Amendments · 1865–1920</div></div>
+
+<!-- placeholder row to open the collapsible section body -->
+<div class="const-row" style="display:none" aria-hidden="true">
+  <div class="margin-l"></div>
+  <div class="center-col"></div>
+  <div class="margin-r"></div>
+</div><!-- /placeholder -->
+
+<!-- XIII -->
+<div class="article-divider" id="am13"><div class="divider-label"><span class="divider-number">Am. XIII</span>Thirteenth Amendment — Abolition of Slavery · 1865</div></div>
+
+<div class="const-row">
+  <div class="margin-l">
+    <div class="comment" data-phil="living">
+      <div class="comment-tag">Living Constitution</div>
+      <div class="comment-body">The Thirteenth Amendment's prohibition extends beyond formal chattel slavery to the "badges and incidents" of slavery — a reading the Court endorsed in <em>Jones v. Alfred H. Mayer Co.</em> (1968), upholding federal fair housing legislation as a valid exercise of congressional power to eliminate slavery's legacy. The Thirteenth Amendment is itself evidence that the Constitution must evolve: it dismantled an institution the original text encoded and protected.</div>
+      <div class="comment-cases"><span class="case-ref">Jones v. Alfred H. Mayer Co. (1968)</span></div>
+    </div>
+  </div>
+  <div class="center-col">
+    <span class="section-label">Amendment XIII, Section 1 · 1865</span>
+    <div class="const-text"><p>Neither slavery nor involuntary servitude, except as a punishment for crime whereof the party shall have been duly convicted, shall exist within the United States, or any place subject to their jurisdiction.</p></div>
+  </div>
+  <div class="margin-r">
+    <div class="comment" data-phil="originalism">
+      <div class="comment-tag">Originalism</div>
+      <div class="comment-body">The Thirteenth Amendment's exception — "except as a punishment for crime" — was deliberate and understood by its framers to permit prison labor. Its exploitation as a mechanism for re-enslaving Black Americans through criminalization in the post-Reconstruction South was an abuse of original meaning, not its fulfillment. Originalists committed to honest historical inquiry must acknowledge this legacy rather than treat the exception as unproblematic.</div>
+    </div>
+  </div>
+</div>
+
+<!-- XIV -->
+<div class="article-divider" id="am14"><div class="divider-label"><span class="divider-number">Am. XIV</span>Fourteenth Amendment — Citizenship, Equal Protection, Due Process · 1868</div></div>
+
+<div class="const-row">
+  <div class="margin-l">
+    <div class="comment" data-phil="originalism">
+      <div class="comment-tag">Originalism</div>
+      <div class="comment-body">The Fourteenth Amendment was ratified to ensure formerly enslaved persons received the same civil rights as white citizens — to dismantle the Black Codes and guarantee formal legal equality. Its original public meaning commands anti-classification: government cannot distinguish by race. This is colorblind. Race-conscious affirmative action violates Equal Protection regardless of purpose, because the Amendment does not permit racial classification in either direction.</div>
+      <div class="comment-cases"><span class="case-ref">Students for Fair Admissions v. Harvard (2023)</span><span class="case-ref">Parents Involved v. Seattle (2007)</span></div>
+    </div>
+    <div class="comment" data-phil="textualism">
+      <div class="comment-tag">Textualism</div>
+      <div class="comment-body">Substantive due process is an oxymoron. "Due process of law" governs how government acts — procedure — not what it may do substantively. The doctrine that the Due Process Clause protects unenumerated substantive rights has no textual basis. It has produced decisions reflecting nothing but the Court's policy preferences: from <em>Lochner</em>'s protection of economic contracts to <em>Roe</em>'s protection of abortion — the same analytical move applied to different preferred outcomes.</div>
+      <div class="comment-cases"><span class="case-ref">Dobbs v. Jackson Women's Health (2022)</span><span class="case-ref">Lochner v. New York (1905)</span></div>
+    </div>
+  </div>
+  <div class="center-col">
+    <span class="section-label">Amendment XIV, Section 1 · 1868</span>
+    <div class="const-text"><p>All persons born or naturalized in the United States, and subject to the jurisdiction thereof, are citizens of the United States and of the State wherein they reside. No State shall make or enforce any law which shall abridge the privileges or immunities of citizens of the United States; nor shall any State deprive any person of life, liberty, or property, without due process of law; nor deny to any person within its jurisdiction the equal protection of the laws.</p></div>
+  </div>
+  <div class="margin-r">
+    <div class="comment" data-phil="living">
+      <div class="comment-tag">Living Constitution</div>
+      <div class="comment-body">The Fourteenth Amendment's framers laid down a principle whose applications would necessarily extend beyond the immediate Reconstruction crisis. Equal protection has rightly expanded to sex (<em>United States v. Virginia</em>), alienage, and sexual orientation (<em>Obergefell</em>). Freezing the Clause at its 1868 applications would preserve inequalities — against women, against LGBTQ+ persons — that its animating commitment to equal human dignity makes indefensible. The text commands equality; history tells us who was excluded and why that should no longer stand.</div>
+      <div class="comment-cases"><span class="case-ref">Brown v. Board of Education (1954)</span><span class="case-ref">Obergefell v. Hodges (2015)</span><span class="case-ref">United States v. Virginia (1996)</span></div>
+    </div>
+    <div class="comment" data-phil="natural-law">
+      <div class="comment-tag">Natural Law</div>
+      <div class="comment-body">The liberty protected by the Due Process Clause is not a frozen list of rights from 1868. It is an enduring idea: that certain choices — about identity, family, body, conscience — are so fundamental to human dignity that the state cannot override them without compelling justification. Justice Harlan's approach in <em>Poe v. Ullman</em> — defining liberty by reference to the nation's deepest legal traditions, not their specific past applications — remains the most honest account of what substantive due process actually does.</div>
+      <div class="comment-cases"><span class="case-ref">Lawrence v. Texas (2003)</span><span class="case-ref">Planned Parenthood v. Casey (1992)</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- XV -->
+<div class="article-divider" id="am15"><div class="divider-label"><span class="divider-number">Am. XV</span>Fifteenth Amendment — Voting Rights (Race) · 1870</div></div>
+
+<div class="const-row">
+  <div class="margin-l">
+    <div class="comment" data-phil="living">
+      <div class="comment-tag">Living Constitution</div>
+      <div class="comment-body">The Voting Rights Act of 1965 was Congress's most powerful exercise of Fifteenth Amendment enforcement power — and its preclearance regime was the most effective tool for combating racial discrimination in voting since Reconstruction. <em>Shelby County v. Holder</em> (2013), striking down the coverage formula, applied the Fifteenth Amendment's own principle to limit Congress's ability to enforce it — a tension that has intensified as documented voting discrimination has resurfaced in the formula's absence.</div>
+      <div class="comment-cases"><span class="case-ref">Shelby County v. Holder (2013)</span></div>
+    </div>
+  </div>
+  <div class="center-col">
+    <span class="section-label">Amendment XV · 1870</span>
+    <div class="const-text">
+      <p>The right of citizens of the United States to vote shall not be denied or abridged by the United States or by any State on account of race, color, or previous condition of servitude.</p>
+      <p>The Congress shall have power to enforce this article by appropriate legislation.</p>
+    </div>
+  </div>
+  <div class="margin-r">
+    <div class="comment" data-phil="originalism">
+      <div class="comment-tag">Originalism</div>
+      <div class="comment-body">The Fifteenth Amendment's enforcement clause grants Congress power to enact "appropriate legislation" — but appropriateness is not unlimited deference. In <em>Shelby County</em>, Chief Justice Roberts held that the coverage formula for preclearance was no longer grounded in current conditions of discrimination, violating the constitutional principle of equal sovereignty among the states. Congress retains the power to re-enact preclearance with a formula based on current evidence.</div>
+      <div class="comment-cases"><span class="case-ref">Shelby County v. Holder (2013)</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- XVII -->
+<div class="article-divider" id="am17"><div class="divider-label"><span class="divider-number">Am. XVII</span>Seventeenth Amendment — Direct Election of Senators · 1913</div></div>
+
+<div class="const-row">
+  <div class="margin-l">
+    <div class="comment" data-phil="originalism">
+      <div class="comment-tag">Originalism</div>
+      <div class="comment-body">The original Constitution had senators chosen by state legislatures — a deliberate design giving state governments a direct voice in federal lawmaking and a structural check on federal power. The Seventeenth Amendment, by shifting to popular election, severed that tie. Some originalists argue it fatally undermined the federalist architecture of the Senate, eliminating the states-as-states representation the Framers considered essential to dual sovereignty.</div>
+    </div>
+    <div class="comment" data-phil="pragmatism">
+      <div class="comment-tag">Pragmatism</div>
+      <div class="comment-body">By 1913, state legislative selection of senators had become a source of deadlock and corruption — state legislatures were frequently unable to agree on a senator, leaving seats vacant, and moneyed interests had learned to capture state legislatures more easily than a statewide electorate. The Seventeenth Amendment was a Progressive Era reform responding to real democratic failures. Its functional justification was overwhelming; the abstract federalism concern was outweighed by the demonstrated costs of the original mechanism.</div>
+      <div class="comment-cases"><span class="case-ref">Hein v. Freedom From Religion Foundation (2007)</span></div>
+    </div>
+  </div>
+  <div class="center-col">
+    <span class="section-label">Amendment XVII · 1913</span>
+    <div class="const-text">
+      <p>The Senate of the United States shall be composed of two Senators from each State, elected by the people thereof, for six years; and each Senator shall have one vote. The electors in each State shall have the qualifications requisite for electors of the most numerous branch of the State legislatures.</p>
+      <p>When vacancies happen in the representation of any State in the Senate, the executive authority of such State shall issue writs of election to fill such vacancies: Provided, That the legislature of any State may empower the executive thereof to make temporary appointments until the people fill the vacancies by election as the legislature may direct.</p>
+    </div>
+  </div>
+  <div class="margin-r">
+    <div class="comment" data-phil="living">
+      <div class="comment-tag">Living Constitution</div>
+      <div class="comment-body">The Seventeenth Amendment is a model of constitutional evolution: the democratic principle latent in "We the People" was progressively applied to an institution the Founders had insulated from direct popular accountability. The states'-rights justification for legislative selection had been overtaken by events — the amendment updated the Senate's selection mechanism to reflect the maturing democratic commitments of the republic. Constitutional change through formal amendment is living constitutionalism by another name.</div>
+    </div>
+    <div class="comment" data-phil="textualism">
+      <div class="comment-tag">Textualism</div>
+      <div class="comment-body">The Seventeenth Amendment's text is clear and supersedes the original Article I, Section 3. Whatever one thinks of the policy choice, it was made through the proper constitutional process and is now the binding text. Nostalgia for the original selection method — however defensible on federalism grounds — cannot override a duly ratified amendment. Textualists who argue the Seventeenth Amendment should be repealed are making a political argument, not a constitutional one.</div>
+    </div>
+  </div>
+</div>
+
+<!-- XIX -->
+<div class="article-divider" id="am19"><div class="divider-label"><span class="divider-number">Am. XIX</span>Nineteenth Amendment — Women's Suffrage · 1920</div></div>
+
+<div class="const-row">
+  <div class="margin-l">
+    <div class="comment" data-phil="living">
+      <div class="comment-tag">Living Constitution</div>
+      <div class="comment-body">The Nineteenth Amendment represents the formal process fulfilling what the living constitutionalist tradition had long argued the Fourteenth Amendment's equal protection guarantee already required. For over 130 years, "We the People" explicitly excluded half the population from political self-governance. The amendment's ratification confirms that constitutional community expands — whether by formal amendment or by judicial recognition that existing text demands more than it has been given.</div>
+    </div>
+    <div class="comment" data-phil="natural-law">
+      <div class="comment-tag">Natural Law</div>
+      <div class="comment-body">The natural-law tradition holds that political rights flow from personhood and rational agency, not from sex. The Nineteenth Amendment gave constitutional form to what natural justice had always required. That it took an amendment to achieve — rather than simply applying the Fourteenth Amendment's existing equality guarantee — reflects the Constitution's historic gap between its stated principles and their application, not a principled limit on the scope of natural rights.</div>
+    </div>
+  </div>
+  <div class="center-col">
+    <span class="section-label">Amendment XIX · 1920</span>
+    <div class="const-text">
+      <p>The right of citizens of the United States to vote shall not be denied or abridged by the United States or by any State on account of sex.</p>
+      <p>Congress shall have power to enforce this article by appropriate legislation.</p>
+    </div>
+  </div>
+  <div class="margin-r">
+    <div class="comment" data-phil="originalism">
+      <div class="comment-tag">Originalism</div>
+      <div class="comment-body">The Nineteenth Amendment vindicates the originalist insistence that formal amendment — not judicial reinterpretation — is the legitimate mechanism for constitutional change. Seventy-two years of organized political effort produced a duly ratified amendment rather than a judicial rewrite of existing text. Whether the Amendment has broader implications for sex-based classifications under the Equal Protection Clause (beyond voting) is a genuine question of original public meaning at the time of ratification in 1920.</div>
+    </div>
+    <div class="comment" data-phil="pragmatism">
+      <div class="comment-tag">Pragmatism</div>
+      <div class="comment-body">The Nineteenth Amendment was a functional necessity: excluding half the population from the vote produced government systematically unaccountable to half its governed. The pragmatic argument for women's suffrage was not simply about fairness but about the quality of democratic representation — legislatures that answer only to male voters will systematically underweight interests that disproportionately affect women. The Amendment corrected a structural defect in American democracy's feedback mechanisms.</div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /page-wrap -->
+
+<script>
+(function () {
+  const masthead = document.getElementById('masthead');
+
+  // Keep --header-h in sync with actual header height
+  function syncHeaderHeight() {
+    document.documentElement.style.setProperty('--header-h', masthead.offsetHeight + 'px');
+  }
+  syncHeaderHeight();
+  window.addEventListener('resize', syncHeaderHeight);
+
+  // ── COLLAPSIBLE SECTIONS ──────────────────────────────────────────
+  const chevronSVG = '<svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 4L5.5 7.5L9 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+  // Only top-level dividers get a collapse button; sub-dividers are swallowed into the parent body
+  document.querySelectorAll('.article-divider:not(.sub-divider):not(.no-collapse)').forEach(divider => {
+    // Collect ALL siblings until the next TOP-LEVEL divider
+    const rows = [];
+    let next = divider.nextElementSibling;
+    while (next && !(next.classList.contains('article-divider') && !next.classList.contains('sub-divider'))) {
+      rows.push(next);
+      next = next.nextElementSibling;
+    }
+    if (rows.length === 0) return;
+
+    // Wrap rows (including any sub-dividers inside) in a section-body
+    const body = document.createElement('div');
+    body.className = 'section-body';
+    divider.parentNode.insertBefore(body, rows[0]);
+    rows.forEach(r => body.appendChild(r));
+
+    // Add collapse button to the divider label
+    const label = divider.querySelector('.divider-label');
+    const btn = document.createElement('button');
+    btn.className = 'collapse-btn';
+    btn.setAttribute('aria-label', 'Toggle section');
+    btn.setAttribute('aria-expanded', 'true');
+    btn.innerHTML = chevronSVG;
+    label.insertBefore(btn, label.firstChild);
+
+    btn.addEventListener('click', () => {
+      const nowCollapsed = body.classList.toggle('collapsed');
+      btn.setAttribute('aria-expanded', String(!nowCollapsed));
+      btn.classList.toggle('rotated', nowCollapsed);
+    });
+  });
+
+  // ── PHILOSOPHY TOGGLES ────────────────────────────────────────────
+  document.querySelectorAll('.phil-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const isActive = btn.classList.toggle('active');
+      const phil = btn.dataset.phil;
+      document.querySelectorAll(`.comment[data-phil="${phil}"]`).forEach(c => {
+        c.classList.toggle('hidden', !isActive);
+      });
+    });
+  });
+
+  // ── NAV ACTIVE STATE ──────────────────────────────────────────────
+  const navDividers = document.querySelectorAll('.article-divider[id]');
+  const navLinks = document.querySelectorAll('.section-nav-row a');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const id = e.target.id;
+        navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
+      }
+    });
+  }, { rootMargin: '-' + (masthead.offsetHeight + 4) + 'px 0px -55% 0px' });
+  navDividers.forEach(d => obs.observe(d));
+
+  // ── SMOOTH SCROLL ─────────────────────────────────────────────────
+  navLinks.forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const t = document.querySelector(a.getAttribute('href'));
+      if (!t) return;
+      const top = t.getBoundingClientRect().top + window.scrollY - masthead.offsetHeight;
+      window.scrollTo({ top, behavior: 'smooth' });
+    });
+  });
+})();
+</script>
+</body>
+</html>
